@@ -1,7 +1,10 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
+const electron = require("electron");
 const convertFactory= require('electron-html-to');
+
+
 
 inquirer
     .prompt([
@@ -142,6 +145,8 @@ inquirer
             if (err) {throw err;}
         });
 
+        // not working 
+
         // fs.readFile('index2.html', 'utf8', (err, htmlString) => {
         //     // add local path in case your HTML has relative paths
         //     // htmlString = htmlString.replace(/href="|src="/g, match => {
@@ -153,7 +158,7 @@ inquirer
         //     });
         //     conversion({ html: htmlString }, (err, result) => {
         //       if (err) return console.error(err);
-        //       result.stream.pipe(fs.createWriteStream('/pdftest.pdf'));
+        //       result.stream.pipe(fs.createWriteStream('pdftest.pdf'));
         //       conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
         //     });
         //   });
